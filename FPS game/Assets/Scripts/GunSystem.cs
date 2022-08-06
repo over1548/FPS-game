@@ -69,16 +69,17 @@ public class GunSystem : MonoBehaviour
 
             if (rayHit.collider.CompareTag("Enemy"))
             {
-                //rayHit.collider.GetComponent<ShootingAi>().TakeDamage(damage);
+
             }
+                //rayHit.collider.GetComponent<ShootingAi>().TakeDamage(damage);
         }
 
         //ShakeCamera
         camShake.Shake(camShakeDuration, camShakeMagnitude);
 
         //Graphics
-        Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.Euler(0, 180, 0));
         Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
+        Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.Euler(0, 180, 0));
 
         bulletsLeft--;
         bulletsShot--;
